@@ -1,0 +1,60 @@
+@import "./variables/var.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 25px;
+}
+h5 {
+    font-size: 20px;
+}
+img {
+    max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $primary-heading-color;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+p {
+    font-size: 18px;
+    line-height: 1.2;
+}
+.mainSpacing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+section {
+    &:nth-child(odd) {
+        background: $odd-color;
+    }
+}
+.image-main {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 30px;
+    }
+}
