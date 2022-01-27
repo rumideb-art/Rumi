@@ -6,6 +6,7 @@
 }
 body {
     font-size: 16px;
+    padding-top: 56px;
 }
 h1 {
     font-size: 50px;
@@ -38,7 +39,7 @@ h6 {
 }
 p {
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.8;
 }
 .mainSpacing {
     padding-top: 40px;
@@ -52,7 +53,53 @@ section {
 .image-main {
     max-width: 100%;
 }
-
+.bg-dark {
+    background-color: #564040 !important;
+}
+.frontpage {
+    position: relative;
+    &:after {
+        background: #fff0f0;
+        -webkit-clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%);
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70%;
+        z-index: -1;
+    }
+}
+figure.imageborder {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+    img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+section.common-bg {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
 @media screen and (max-width: 767px) {
     h1 {
         font-size: 30px;
