@@ -23,7 +23,7 @@ const Header = () => {
         <div className='fixed-top'>
             <Navbar expand="xl" bg="dark" variant="dark" fixed="top">
                 <Container>
-                    <Navbar.Brand href="#home">Rumi</Navbar.Brand>
+                    <Link to='/'><Navbar.Brand>Rumi</Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='ms-2' />
                     <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
                         <Nav className="me-auto">
