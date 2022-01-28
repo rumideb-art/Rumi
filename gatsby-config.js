@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: `PowerPatent`,
+        title: `Rumi Deb`,
         siteUrl: `https://www.gatsbyjs.com`,
         description: `Blazing fast modern site generator for React`,
     },

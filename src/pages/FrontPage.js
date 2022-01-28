@@ -25,7 +25,7 @@ const data = graphql`
 const FrontPage = () => {
   const homedata = useStaticQuery(data);
   const banner = homedata.allContentfulHomepage.nodes[0];
-  console.log(homedata)
+  //console.log(homedata)
   return (
     <>
       <section className="mainSpacing frontpage">

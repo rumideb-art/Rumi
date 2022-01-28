@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -11,6 +11,7 @@ const data = graphql`
         nodes {
             home
             link
+            id
         }
     }
 }
@@ -19,6 +20,7 @@ const data = graphql`
 const Header = () => {
     const Usedata = useStaticQuery(data);
     const headerdata = Usedata.allContentfulHeader.nodes;
+    const [active, setActive] = useState('default');
     return (
         <div className='fixed-top'>
             <Navbar expand="xl" bg="dark" variant="dark" fixed="top">
@@ -26,16 +28,20 @@ const Header = () => {
                     <Link to='/'><Navbar.Brand>Rumi</Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='ms-2' />
                     <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
-                        <Nav className="me-auto">
-                            {headerdata.map((e, index) => {
-                                return (
-                                    <Link className='nav-item nav-link' to={e.link} key={index}> {e.home}</Link>
-                                )
-                            })}
-
+                        <Nav>
+                            {headerdata.map(menus =>
+                                <Link className='nav-item nav-link'
+                                    to={menus.link}
+                                    key={menus.id}
+                                    activekey={active}
+                                    onSelect={(selectedKey) => setActive(selectedKey)}
+                                    activeClassName="active"
+                                >
+                                    {menus.home}
+                                </Link>
+                            )}
                         </Nav>
                     </Navbar.Collapse>
-
                 </Container>
             </Navbar>
         </div>

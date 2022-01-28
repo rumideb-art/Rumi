@@ -8,22 +8,71 @@ import "../scss/styles.scss";
 
 const data = graphql`
 {
-    allContentfulPortfolio {
-        nodes {
-            banner {
-                fluid {
-                    src
-                }
-                title
-            }
-            logo {
-                fluid {
-                    src
-                }
-                title
-            }
+ allContentfulPortfolio {
+    nodes {
+      logo {
+        fluid {
+          src
         }
+        title
+      }
+      bannerMagazineCover {
+        fluid {
+          src
+        }
+        title
+        id
+      }
+      brochure {
+        fluid {
+          src
+        }
+        title
+        id
+      }
+      businessCards {
+        fluid {
+          src
+        }
+        id
+        title
+      }
+      carwrap {
+        fluid {
+          src
+        }
+        id
+        title
+      }
+      packaging {
+        title
+        fluid {
+          src
+        }
+        id
+      }
+      postcard {
+        id
+        title
+        fluid {
+          src
+        }
+      }
+      flyer {
+        title
+        fluid {
+          src
+        }
+        id
+      }
+      banner {
+        fluid {
+          src
+        }
+        title
+      }
     }
+  }
 }
 `
 const Portfolio = () => {
@@ -46,7 +95,6 @@ const Portfolio = () => {
         }
     };
 
-    console.log(profiledata)
     return (
         <Layout>
             <section className='common-bg'>
@@ -60,26 +108,194 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            <div className='container mainSpacing'>
-                <div className='row'>
-                    <div className='col-md-12 text-center mb-5'>
-                        <h2 className='display-3'> Banner </h2>
-                    </div>
-                </div>
-                <SimpleReactLightbox options={options} key="unique-value">
-                    <SRLWrapper>
-                        <div className="row">
-                            {profiledata.allContentfulPortfolio.nodes[0].banner.map((e, index) => (
-                                <div className='col-md-4 mb-3' key={index}>
-                                    <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
-                                </div>
-                            ))}
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Banner </h2>
                         </div>
-                    </SRLWrapper>
-                </SimpleReactLightbox>
-            </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].banner.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
 
 
+            <section className='mainSpacing logowrap'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Logo </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].logo.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Banner Magazine Cover </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].bannerMagazineCover.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+
+
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Brochure </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].brochure.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Business Cards </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].businessCards.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Carwrap </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].carwrap.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Packaging </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].packaging.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Postcard </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].postcard.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
+
+            <section className='mainSpacing'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12 text-center mb-5'>
+                            <h2 className='display-3'> Flyer </h2>
+                        </div>
+                    </div>
+                    <SimpleReactLightbox options={options} key="unique-value">
+                        <SRLWrapper>
+                            <div className="row">
+                                {profiledata.allContentfulPortfolio.nodes[0].flyer.map((e, index) => (
+                                    <div className='col-md-4 mb-3' key={index}>
+                                        <figure className='imageborder'><img src={e.fluid.src} alt={e.fluid.title} srl_gallery_image="true" alt={e.title} /></figure>
+                                    </div>
+                                ))}
+                            </div>
+                        </SRLWrapper>
+                    </SimpleReactLightbox>
+                </div>
+            </section>
         </Layout>
     )
 };
