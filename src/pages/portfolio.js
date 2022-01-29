@@ -155,7 +155,7 @@ const Portfolio = () => {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12 text-center mb-5'>
-                            <h2 className='display-3'> Banner Magazine Cover </h2>
+                            <h2 className='display-3'> Book/Magazine Cover </h2>
                         </div>
                     </div>
                     <SimpleReactLightbox options={options} key="unique-value">
